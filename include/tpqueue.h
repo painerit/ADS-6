@@ -9,14 +9,14 @@ class TPQueue {
   int first, last;
 
  public:
-  TPQueue() : first(0), last(0){}
+  TPQueue() : first(0), last(0) {}
   void push(T x) {
     int tmp = ++last - 1;
-    while ((tmp - 1) >= first) && (arr[(tmp + 1) % size].prior < x.prior))
+    while ((tmp - 1) >= first) && (arr[(tmp + 1) % size].prior < x.prior)) {
       arr[tmp % size] = arr[(tmp + 1) % size];
       --tmp;
     }
-    arr[tmp % size] = x;
+    arr[(tmp % size)] = x;
   T pop() {
     return arr[(first++) % size];
   }
