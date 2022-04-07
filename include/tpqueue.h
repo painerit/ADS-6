@@ -13,8 +13,8 @@ class TPQueue {
   void push(T x) {
     int tmp = ++last - 1;
     while (((tmp - 1) >= first) && (arr[(tmp + 1) % size].prior < x.prior)) {
-      arr[tmp % size] = arr[(tmp + 1) % size];
       --tmp;
+      arr[tmp % size] = arr[(tmp + 1) % size];
     }
     arr[(tmp % size)] = x;
   }
